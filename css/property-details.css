@@ -1,0 +1,331 @@
+/*
+    Ce fichier CSS gère le style de la page de détails d'une propriété.
+    Il définit l'apparence de la galerie d'images, des informations du logement, des boutons et des avis.
+    Les commentaires expliquent chaque section pour bien comprendre le rôle de chaque bloc.
+*/
+
+.property-details-page {
+    padding-bottom: 2rem;
+}
+
+
+.property-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.property-location {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+.property-gallery {
+    margin-bottom: 2rem;
+}
+
+.image-gallery-container {
+    position: relative;
+    width: 100%;
+}
+
+
+.image-carousel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.carousel-nav.prev {
+    left: 15px;
+}
+
+.carousel-nav.next {
+    right: 15px;
+}
+
+.carousel-nav:hover {
+    opacity: 1;
+    background-color: white;
+}
+
+.carousel-nav i {
+    color: #333;
+}
+
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+
+
+.thumbnail-container {
+    margin-top: 15px;
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.thumbnail-row {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 5px;
+}
+
+.thumbnail {
+    flex: 0 0 100px;
+    height: 70px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.thumbnail.active {
+    border-color: var(--primary-color);
+    opacity: 1;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.thumbnail-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: calc(var(--border-radius) - 4px);
+}
+
+
+.host-section {
+    padding: 1rem;
+    background-color: var(--light-bg);
+    border-radius: var(--border-radius);
+}
+
+.host-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.property-features,
+.property-amenities,
+.property-description,
+.property-location,
+.property-reviews {
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.features-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.features-list li {
+    margin-bottom: 0.5rem;
+}
+
+.features-list i {
+    width: 25px;
+    color: var(--primary-color);
+}
+
+.amenity-item {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.amenity-item i {
+    width: 25px;
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+
+.location-map {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+
+.reviewer-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.review-item:last-child {
+    border-bottom: none;
+}
+
+.rating-stars {
+    color: #FFD700;
+}
+
+.booking-card {
+    position: sticky;
+    top: 100px;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: white;
+}
+
+.price-info {
+    font-size: 1.2rem;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.total-calculation,
+.total-price {
+    padding: 1rem 0;
+    border-top: 1px solid #eee;
+}
+
+.total-price {
+    font-size: 1.2rem;
+}
+
+
+.favorite-button-lg {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.favorite-button-lg i {
+    margin-right: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.favorite-button-lg.favorited {
+    border-color: var(--primary-color);
+}
+
+.favorite-button-lg.favorited i {
+    color: var(--primary-color);
+}
+
+.favorite-button-lg:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(255, 90, 95, 0.1);
+}
+
+
+@media (max-width: 767px) {
+    .main-image {
+        height: 250px;
+    }
+
+    .thumbnail {
+        height: 80px;
+    }
+
+    .booking-card {
+        position: static;
+        margin-top: 1.5rem;
+    }
+}

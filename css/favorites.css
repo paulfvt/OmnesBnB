@@ -1,0 +1,176 @@
+/*
+    Ce fichier CSS gère le style de la page des favoris.
+    Il définit l'apparence des cartes de propriétés favorites, des boutons, et des messages d'information.
+    Les commentaires expliquent chaque section pour bien comprendre le rôle de chaque bloc.
+*/
+
+.favorites-container {
+    margin-top: 1.5rem;
+}
+
+.favorite-card {
+    height: 100%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.favorite-card:hover {
+    transform: translateY(-5px);
+}
+
+.favorite-image-container, .property-image-container {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.favorite-image, .property-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.property-card:hover .property-image {
+    transform: scale(1.05);
+}
+
+.favorite-info {
+    padding: 1rem;
+}
+
+.favorite-price {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.favorite-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: white;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border: none;
+    cursor: pointer;
+}
+
+.property-card {
+    height: 100%;
+    border: none;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    margin-bottom: 1.5rem;
+    background-color: #fff;
+    cursor: default;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.property-info {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.property-info .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+
+.property-info .card-text {
+    color: #555;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.property-details {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.property-details > div {
+    margin-bottom: 0.5rem;
+}
+
+.property-details > div:last-child {
+    margin-bottom: 0;
+}
+
+.reservation-price {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    border-left: 3px solid var(--primary-color);
+}
+
+.price-amount {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.favorite-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(2px);
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.favorite-button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.1);
+}
+
+.favorite-button i {
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.favorite-button:hover i {
+    color: var(--primary-color);
+}
+
+.favorite-button.favorited i {
+    color: var(--primary-color);
+    animation: heartPulse 0.4s ease-in-out;
+}
+
+@keyframes heartPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}

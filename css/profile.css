@@ -1,0 +1,33 @@
+/*
+    Ce fichier CSS gère le style de la page de profil utilisateur.
+    Il définit l'apparence de l'avatar, des formulaires, des boutons et des messages.
+    Les commentaires expliquent chaque section pour bien comprendre le rôle de chaque bloc.
+*/
+
+.profile-image-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+}
+
+.profile-avatar:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.profile-header {
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+}
